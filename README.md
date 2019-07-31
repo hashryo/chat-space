@@ -1,5 +1,4 @@
 # chat-space
-
 ## membersテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -11,7 +10,6 @@
 ### Association
 - has_many :chats
 - has_many :groups, through: :members_groups
-
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -20,7 +18,6 @@
 ### Association
 - has_many :chats
 - has_many :members, through: :members_groups
-
 ## users_groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -30,7 +27,6 @@
 ### Association
 - belongs_to :member
 - belongs_to :group
-
 ## chatsテーブル
 |Column|Type|Options|
 |------|----|-------|
