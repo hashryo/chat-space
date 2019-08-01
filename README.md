@@ -1,40 +1,35 @@
 # chat-space
-## membersテーブル
+## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|member_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
-|name|string|null: false|
-|Email|string|null: false|
-|password|string|null: false|
+|name|string|null: false, index: true|
 ### Association
 - has_many :chats
-- has_many :groups, through: :members_groups
+- has_many :groups, through: :users_groups
+- has_many :users_groups
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group_id|integer|null: false, foreign_key: true|
-|group_name|string|null: false|
+|name|string|null: false|
 ### Association
 - has_many :chats
-- has_many :members, through: :members_groups
+- has_many :users, through: :users_groups
+- has_many :users_groups
 ## users_groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false|
-|member_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
 ### Association
-- belongs_to :member
+- belongs_to :user
 - belongs_to :group
 ## chatsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|chat_id|integer|null: false|
-|member_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
-|text|text|null: false|
-|image|text||
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
+|text|text||
+|image|string||
 ### Association
-- belongs_to :member
+- belongs_to :user
 - belongs_to :group
