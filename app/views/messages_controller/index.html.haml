@@ -1,0 +1,47 @@
+.contents
+  .contents__left
+    .contents__left__up
+      .contents__left__up__user
+        testuser
+      .contents__left__up__logo
+        =link_to "https://master.tech-camp.in/curriculums/3496" do
+          =fa_icon "edit" , class: "contents__left__up__logo__btn--edit"
+        =link_to "https://master.tech-camp.in/curriculums/3496" do
+          =fa_icon "cog" , class: "contents__left__up__logo__btn--cog"
+    .contents__left__down
+      .contents__left__down__group1
+        testgroup
+      .contents__left__down__chat1
+        こんにちわ！
+      .contents__left__down__group2
+        testgroup
+      .contents__left__down__chat2
+        こんにちわ！
+  .contents__right
+    .contents__right__up
+      .contents__right__up__group
+        testgroup
+      .contents__right__up__member
+        member:testuser
+      %input{:type => "submit" , :class => "contents__right__up__edit" , :value => "Edit"}
+    .contents__right__mid
+      .contents__right__mid__user1
+        testuser
+      .contents__right__mid__date1
+        2019/8/2
+      .contents__right__mid__chat1
+        こんにちわ！
+      .contents__right__mid__user2
+        testuser
+      .contents__right__mid__date2
+        2019/8/2
+      .contents__right__mid__chat2
+        こんにちわ！
+    .contents__right__down
+      .contents__right__down__form
+        %input{:placeholder => "type a mesages" , :class => "contents__right__down__form__input-box" }
+        -# %form{:action => "https://master.tech-camp.in/curriculums/3496" , :method => "post" }
+        %label{:class => "contents__right__down__form__label" , :for => "mesage_image" }
+          %i.fa.fa-picture-o
+          %input{:type => "file" , :class => "contents__right__down__form__label__file" , :id => "mesage_image"}
+        %input{:type => "submit" , :class => "contents__right__down__form__send" , :value => "Send" }

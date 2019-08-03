@@ -1,0 +1,182 @@
+* {
+  box-sizing: border-box;
+}
+$White: White;
+.contents {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  &__left{
+    width: 300px;
+    height: 100%;
+    &__up{
+      background-color: #253141; 
+      height: 100px;
+      width: 100%;
+      position: relative;
+      &__user{
+        font-size: 16px;
+        font-weight: bold;
+        color: $White;
+        line-height: 100px;
+        padding: 0px 20px;
+        display: inline;
+        position: absolute;
+      }
+      &__logo{
+        color: $White;
+        display: inline;
+        line-height: 10px;
+        position: absolute;
+        line-height: 100px;
+        padding: 0px 20px;
+        right: 0px;
+        &__btn--edit{
+          color: $White;
+        }
+        &__btn--cog{
+          color: W$hite;
+        }
+      }
+    }
+    &__down{
+      height: calc(100% - 100px);
+      background-color: #2f3e51;
+      &__group1{
+        padding: 20px 20px 5px 20px;
+        font-size: 15px;
+        font-weight: bold;
+        color: $White;
+      }
+      &__chat1{
+        padding: 0px 20px 40px 20px;
+        font-size: 11px;
+        font-weight: bold;
+        color: $White;
+      }
+      &__group2{
+        padding: 0px 20px 5px 20px;
+        font-size: 15px;
+        font-weight: bold;
+        color: $White;
+      }
+      &__chat2{
+        padding: 0px 20px 40px 20px;
+        font-size: 11px;
+        font-weight: bold;
+        color: $White;
+      }
+    }
+  }
+  &__right{
+    width: calc(100vw - 300px);
+    height: 100%;
+    background-color: $White;
+    &__up{
+      width: 100%;
+      height: 100px;
+      position: relative;
+      border-bottom: #eeeeee solid 1px;
+      &__group{
+        position: absolute;
+        display: inline;
+        font-size: 20px;
+        color: #333333;
+        padding: 35px 0px 15px 40px;
+      } 
+      &__member{
+        font-size: 12px;
+        color: #999999;
+        position: absolute;
+        padding: 82px 0px 0px 40px;
+      }
+      &__edit{
+        padding: 0px 20px;
+        position: absolute;
+        display: inline-block;
+        height: 40px;
+        border: solid #38AEF0 1px;
+        color: #38AEF0;
+        line-height: 40px;
+        margin-top: 28px;
+        right: 40px;
+      }
+    }
+    &__mid{
+      background-color: #fafafa;
+      height: calc(100% - 190px);
+      &__user1{
+        font-size: 16px;
+        color: #434a54;
+        font-weight: bold;
+        display: inline-block;
+        padding: 46px 10px 10px 40px;
+      }
+      &__date1{
+        font-size: 14px;
+        color: #999999;
+        padding: 46px 0px 10px 10px;
+        display: inline-block;
+      }
+      &__chat1{
+        font-size: 11px;
+        padding: 10px 0px 40px 40px;
+      }
+      &__user2{
+        font-size: 16px;
+        color: #434a54;
+        font-weight: bold;
+        display: inline-block;
+        padding: 0px 10px 10px 40px;
+      }
+      &__date2{
+        font-size: 14px;
+        color: #999999;
+        padding: 0px 0px 10px 10px;
+        display: inline-block;
+      }
+      &__chat2{
+        font-size: 11px;
+        padding: 10px 0px 40px 40px;
+      }
+    }  
+    &__down{
+      background-color: #ddd;
+      height: 90px;
+      width: 100%;
+      position: relative;
+      &__form{
+        height: 50px;
+        width: calc(100% - 80px);
+        margin: 20px 40px;
+        line-height: 50px;
+        position: absolute;
+        display: flex;
+        &__input-box{
+          font-size: 16px;
+          height: 100%;
+          width: 100%;
+          padding-left: 10px;
+          position: relative;
+        }
+        &__label{
+          cursor: pointer;
+          font-size: 1.3rem;
+          position: absolute;
+          right: 115px;
+          &__file{
+            display: none;
+          }
+        }    
+        &__send{
+          background-color: #38AEF0;
+          height: 50px;
+          color: #ddd;
+          width: 100px;
+          margin-left: 15px;
+        }
+      }
+    }     
+  } 
+}
+
