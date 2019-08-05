@@ -1,22 +1,6 @@
 .contents
   .contents__left
-    .contents__left__up
-      .contents__left__up__user
-        testuser
-      .contents__left__up__logo
-        =link_to "https://master.tech-camp.in/curriculums/3496" do
-          =fa_icon "edit" , class: "contents__left__up__logo__btn--edit"
-        =link_to "https://master.tech-camp.in/curriculums/3496" do
-          =fa_icon "cog" , class: "contents__left__up__logo__btn--cog"
-    .contents__left__down
-      .contents__left__down__group1
-        testgroup
-      .contents__left__down__chat1
-        こんにちわ！
-      .contents__left__down__group2
-        testgroup
-      .contents__left__down__chat2
-        こんにちわ！
+    = render 'shared/side_bar'
   .contents__right
     .contents__right__up
       .contents__right__up__group

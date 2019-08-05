@@ -35,13 +35,17 @@ $White: White;
           color: $White;
         }
         &__btn--cog{
-          color: W$hite;
+          color: $White;
         }
       }
     }
     &__down{
       height: calc(100% - 100px);
       background-color: #2f3e51;
+      padding: 20px 20px 5px 20px;
+      font-size: 15px;
+      font-weight: bold;
+      color: $White;
       &__group1{
         padding: 20px 20px 5px 20px;
         font-size: 15px;
@@ -49,18 +53,6 @@ $White: White;
         color: $White;
       }
       &__chat1{
-        padding: 0px 20px 40px 20px;
-        font-size: 11px;
-        font-weight: bold;
-        color: $White;
-      }
-      &__group2{
-        padding: 0px 20px 5px 20px;
-        font-size: 15px;
-        font-weight: bold;
-        color: $White;
-      }
-      &__chat2{
         padding: 0px 20px 40px 20px;
         font-size: 11px;
         font-weight: bold;
