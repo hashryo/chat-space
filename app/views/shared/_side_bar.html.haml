@@ -9,7 +9,8 @@
 .contents__left__down
   - current_user.groups.each do |group|
     = link_to group_messages_path(group) do
-  .contents__left__down__group1
-    = group.name
-  .contents__left__down__chat1
-    こんにちわ！
+      = link_to group_messages_path(group) do
+        .contents__left__down__group1
+          = group.name
+        .contents__left__down__chat1
+          = group.show_last_message

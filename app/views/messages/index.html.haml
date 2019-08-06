@@ -9,23 +9,12 @@
         member:testuser
       %input{:type => "submit" , :class => "contents__right__up__edit" , :value => "Edit"}
     .contents__right__mid
-      .contents__right__mid__user1
-        testuser
-      .contents__right__mid__date1
-        2019/8/2
-      .contents__right__mid__chat1
-        こんにちわ！
-      .contents__right__mid__user2
-        testuser
-      .contents__right__mid__date2
-        2019/8/2
-      .contents__right__mid__chat2
-        こんにちわ！
+      = render @messages
     .contents__right__down
-      .contents__right__down__form
-        %input{:placeholder => "type a mesages" , :class => "contents__right__down__form__input-box" }
-        -# %form{:action => "https://master.tech-camp.in/curriculums/3496" , :method => "post" }
-        %label{:class => "contents__right__down__form__label" , :for => "mesage_image" }
-          %i.fa.fa-picture-o
-          %input{:type => "file" , :class => "contents__right__down__form__label__file" , :id => "mesage_image"}
-        %input{:type => "submit" , :class => "contents__right__down__form__send" , :value => "Send" }
+      = form_for [@group, @message] do |f|
+        .contents__right__down__form
+          = f.text_field :content, class: 'contents__right__down__form__input-box', placeholder: 'type a message' 
+          = f.label :image, class: 'contents__right__down__form__label' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'contents__right__down__form__label__file'
+          = f.submit 'Send', class: 'contents__right__down__form__send'

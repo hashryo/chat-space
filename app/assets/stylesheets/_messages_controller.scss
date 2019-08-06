@@ -42,10 +42,6 @@ $White: White;
     &__down{
       height: calc(100% - 100px);
       background-color: #2f3e51;
-      padding: 20px 20px 5px 20px;
-      font-size: 15px;
-      font-weight: bold;
-      color: $White;
       &__group1{
         padding: 20px 20px 5px 20px;
         font-size: 15px;
@@ -111,24 +107,7 @@ $White: White;
         display: inline-block;
       }
       &__chat1{
-        font-size: 11px;
-        padding: 10px 0px 40px 40px;
-      }
-      &__user2{
-        font-size: 16px;
-        color: #434a54;
-        font-weight: bold;
-        display: inline-block;
-        padding: 0px 10px 10px 40px;
-      }
-      &__date2{
         font-size: 14px;
-        color: #999999;
-        padding: 0px 0px 10px 10px;
-        display: inline-block;
-      }
-      &__chat2{
-        font-size: 11px;
         padding: 10px 0px 40px 40px;
       }
     }  
