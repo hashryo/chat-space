@@ -4,7 +4,8 @@
       = message.user.name
     .contents__right__mid__box__inline-block__date1
       = message.created_at.strftime("%Y/%m/%d %H:%M")
-  - if message.content.present?
-    .contents__right__mid__box__chat1
-      = message.content
-  = image_tag message.image.url, class: 'contents__right__mid__box__image' if message.image.present?
+  .contents__right__mid__box__chat1
+    - if message.content.present?
+      %p.contents__right__mid__box__chat1__content
+        = message.content 
+      = image_tag message.image.url , class: "contents__right__mid__box__chat1__image" if message.image.present?

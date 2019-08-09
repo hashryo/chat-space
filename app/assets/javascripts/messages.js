@@ -1,0 +1,47 @@
+
+$(document).on('turbolinks:load', function(){
+  $(function(){
+    function buildHTML(message){
+      var image =  message.image ? `<img class="contents__right__mid__box__chat1__image" src=${message.image}></img>` : ``
+      var html = `<div class="contents__right__mid__box">
+                    <div class="contents__right__mid__box__inline-block">
+                      <div class="contents__right__mid__box__inline-block__user1">
+                        ${message.name}
+                      </div>
+                      <div class="contents__right__mid__box__inline-block__date1">
+                        ${message.data}
+                      </div>
+                    </div>
+                    <div class="contents__right__mid__box__chat1">
+                      <p class="contents__right__mid__box__chat1__content">
+                        ${message.content}
+                      </p>
+                       ${image}
+                    </div>
+                  </div>`
+      return html;
+    }
+    $('#new_message').on('submit', function(e){
+      e.preventDefault();
+      var formData = new FormData(this);
+      var url = $(this).attr('action')
+      $.ajax({
+        url: url,
+        type: "POST",
+        data: formData,
+        dataType: 'json',
+        processData: false,
+        contentType: false
+      })
+      .done(function(data){
+        var html = buildHTML(data);
+        $('.contents__right__mid').append(html)
+        $('.contents__right__down__form__input-box').val('')
+        $('.contents__right__mid').animate({scrollTop: $('.contents__right__mid')[0].scrollHeight}, 'fast');
+      })
+      .fail(function(){
+        alert('error');
+      })  
+    })
+  })
+});
