@@ -4,10 +4,12 @@
   .contents__right
     .contents__right__up
       .contents__right__up__group
-        testgroup
+        = @group.name
       .contents__right__up__member
-        member:testuser
-      %input{:type => "submit" , :class => "contents__right__up__edit" , :value => "Edit"}
+        - @group.users.each do |user|
+          = user.name
+      = link_to edit_group_path(@group.id) do
+        %input{:type => "submit" , :class => "contents__right__up__edit" , :value => "Edit"}
     .contents__right__mid
       = render @messages
     .contents__right__down
