@@ -4,19 +4,21 @@ $(document).on('turbolinks:load', function(){
     function buildHTML(message){
       var image =  message.image ? `<img class="contents__right__mid__box__chat1__image" src=${message.image}></img>` : ``
       var html = `<div class="contents__right__mid__box">
-                    <div class="contents__right__mid__box__inline-block">
-                      <div class="contents__right__mid__box__inline-block__user1">
-                        ${message.name}
+                    <div class="message" data-message-id=${message.id}>
+                      <div class="contents__right__mid__box__inline-block">
+                        <div class="contents__right__mid__box__inline-block__user1">
+                          ${message.name}
+                        </div>
+                        <div class="contents__right__mid__box__inline-block__date1">
+                          ${message.data}
+                        </div>
                       </div>
-                      <div class="contents__right__mid__box__inline-block__date1">
-                        ${message.data}
+                      <div class="contents__right__mid__box__chat1">
+                        <p class="contents__right__mid__box__chat1__content">
+                          ${message.content}
+                        </p>
+                        ${image}
                       </div>
-                    </div>
-                    <div class="contents__right__mid__box__chat1">
-                      <p class="contents__right__mid__box__chat1__content">
-                        ${message.content}
-                      </p>
-                       ${image}
                     </div>
                   </div>`
       return html;
@@ -43,5 +45,29 @@ $(document).on('turbolinks:load', function(){
         alert('error');
       })  
     })
+
+    var reloadMessages = function() {
+      if (window.location.href.match(/\/groups\/\d+\/messages/)){
+        var last_message_id = $('.message:last').data('message-id');
+        $.ajax({
+          url: "api/messages",
+          type: 'get',
+          dataType: 'json',
+          data: {id: last_message_id}
+        })
+        .done(function(messages) {
+          var insertHTML = '';
+          messages.forEach(function (message) {
+          insertHTML = buildHTML(message);
+          $('.contents__right__mid').append(insertHTML);
+          })
+          $('.contents__right__mid').animate({scrollTop: $('.contents__right__mid')[0].scrollHeight}, 'fast');
+        })
+        .fail(function() {
+          alert('error');
+        });
+      }
+    };
+    setInterval(reloadMessages, 5000);
   })
 });

@@ -1,11 +1,12 @@
 .contents__right__mid__box
-  .contents__right__mid__box__inline-block
-    .contents__right__mid__box__inline-block__user1
-      = message.user.name
-    .contents__right__mid__box__inline-block__date1
-      = message.created_at.strftime("%Y/%m/%d %H:%M")
-  .contents__right__mid__box__chat1
-    - if message.content.present?
-      %p.contents__right__mid__box__chat1__content
-        = message.content 
-      = image_tag message.image.url , class: "contents__right__mid__box__chat1__image" if message.image.present?
+  .message{data: {message_id: message.id , group_id: @group.id} }
+    .contents__right__mid__box__inline-block
+      .contents__right__mid__box__inline-block__user1
+        = message.user.name
+      .contents__right__mid__box__inline-block__date1
+        = message.created_at.strftime("%Y/%m/%d %H:%M")
+    .contents__right__mid__box__chat1
+      - if message.content.present?
+        %p.contents__right__mid__box__chat1__content
+          = message.content 
+        = image_tag message.image.url , class: "contents__right__mid__box__chat1__image" if message.image.present?
