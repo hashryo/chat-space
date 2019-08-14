@@ -9,4 +9,4 @@
       - if message.content.present?
         %p.contents__right__mid__box__chat1__content
           = message.content 
-        = image_tag message.image.url , class: "contents__right__mid__box__chat1__image" if message.image.present?
+      = image_tag message.image.url , class: "contents__right__mid__box__chat1__image" if message.image.present?

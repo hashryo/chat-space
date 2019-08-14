@@ -17,7 +17,7 @@ $(document).on('turbolinks:load', function(){
                         <p class="contents__right__mid__box__chat1__content">
                           ${message.content}
                         </p>
-                        ${image}
+                          ${image}
                       </div>
                     </div>
                   </div>`
@@ -42,7 +42,7 @@ $(document).on('turbolinks:load', function(){
         $('.contents__right__mid').animate({scrollTop: $('.contents__right__mid')[0].scrollHeight}, 'fast');
       })
       .fail(function(){
-        alert('error');
+        alert('メッセージを入力してください');
       })  
     })
 
@@ -61,8 +61,8 @@ $(document).on('turbolinks:load', function(){
             messages.forEach(function (message) {
             insertHTML = buildHTML(message);
             $('.contents__right__mid').append(insertHTML);
-            })
             $('.contents__right__mid').animate({scrollTop: $('.contents__right__mid')[0].scrollHeight}, 'fast');
+            })
           })
           .fail(function() {
             alert('error');

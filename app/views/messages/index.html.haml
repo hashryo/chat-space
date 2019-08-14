@@ -6,6 +6,7 @@
       .contents__right__up__group
         = @group.name
       .contents__right__up__member
+        Member :
         - @group.users.each do |user|
           = user.name
       = link_to edit_group_path(@group.id) do
