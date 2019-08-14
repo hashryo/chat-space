@@ -46,8 +46,8 @@ $(function() {
                            </div>`
     $("#chat-group-users").append(html_chatmember)
     $(this).parent().remove()
-    $(document).on("click" , ".user-search-remove" , function() {
-      $(this).parent().remove()
-    })
+  })
+  $(document).on("click" , ".user-search-remove" , function() {
+    $(this).parent().remove()
   })
 })
